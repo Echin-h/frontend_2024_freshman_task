@@ -1,8 +1,8 @@
-/* 基础样式 */
 .question-list {
     font-family: Arial, sans-serif;
     margin: 20px;
     padding: 0;
+    text-align: center;
 }
 
 .question-list h1 {
@@ -48,14 +48,22 @@
 }
 
 .best-answer {
-    color: #4CAF50;
+    /* 粉色：*/
+    color: #ff0077;
     font-weight: bold;
 }
 
-/* 其他信息 */
-.author-info {
-    font-size: 0.8em;
-    color: #555;
+.question-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+/* 作者和其他信息样式 */
+.meta-info {
+    font-size: 12px; /* 更小的字号 */
+    color: #999; /* 较淡的文字颜色 */
+    margin-bottom: 4px; /* 添加底部外边距 */
 }
 
 .loading,
@@ -63,4 +71,11 @@
     font-size: 1.2em;
     text-align: center;
     color: #cc0000;
+}
+
+.question-list ul {
+    list-style-type: none; /* 移除列表项前的黑点 */
+    padding: 0; /* 移除默认的内边距 */
+    margin: 0 auto; /* 水平居中列表 */
+    max-width: 600px; /* 或者根据需要调整最大宽度 */
 }

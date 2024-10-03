@@ -103,23 +103,27 @@ const QuestionList = () => {
                             <h2>{question.title}</h2>
                             <div className="question-details">
                                 <p>{question.detail}</p>
-                                <p className="author-info">Author: {question.author}</p>
-                                <p className="author-info">Email: {question.author_email}</p>
-                                <p className="author-info">Created at: {new Date(question.created_at).toLocaleString()}</p>
+                                <p className="meta-info">Author: {question.author || '匿名'}</p>
+                                <p className="meta-info">Email: {question.author_email || '无'}</p>
+                                <p className="meta-info">Created at: {question.created_at ? new Date(question.created_at).toLocaleString() : '获取时间失败'}</p>
                             </div>
                             <h4 onClick={() => toggleAnswerVisibility(question.id)}>
                                 Answers {expandedSet.has(question.id) ? '-' : '+'}
                             </h4>
                             {expandedSet.has(question.id) && (
                                 <ul className="answers">
-                                    {question.answers.map((answer) => (
-                                        <li className={`answer ${answer.is_best ? 'best-answer' : ''}`} key={answer.id}>
-                                            <p>{answer.content}</p>
-                                            <p className="author-info">Author: {answer.author_name}</p>
-                                            <p className="author-info">Email: {answer.author_email}</p>
-                                            <p className="author-info">Created at: {new Date(answer.created_at).toLocaleString()}</p>
-                                        </li>
-                                    ))}
+                                    {question.answers && question.answers.length > 0 ? (
+                                        question.answers.map((answer) => (
+                                            <li className={`answer ${answer.is_best ? 'best-answer' : ''}`} key={answer.id}>
+                                                <p>{answer.content}</p>
+                                                <p className="meta-info">Author: {answer.author_name || '匿名'}</p>
+                                                <p className="meta-info">Email: {answer.author_email || '无'}</p>
+                                                <p className="meta-info">Created at: {answer.created_at ? new Date(answer.created_at).toLocaleString() : '获取时间失败'}</p>
+                                            </li>
+                                        ))
+                                    ) : (
+                                        <li className="answer">没有答案</li>
+                                    )}
                                 </ul>
                             )}
                         </li>
@@ -129,5 +133,7 @@ const QuestionList = () => {
         </div>
     );
 };
+
+
 
 export {QuestionForm, QuestionList};
