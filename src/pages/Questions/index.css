@@ -1,0 +1,66 @@
+/* 基础样式 */
+.question-list {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+.question-list h1 {
+    color: #333;
+}
+
+.question {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.question h2 {
+    color: #2a2a2a;
+}
+
+.question h4 {
+    cursor: pointer;
+    color: #007bff; /* 蓝色提示可以交互 */
+}
+
+.question-details {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* 答案部分 */
+.answers {
+    margin-top: 10px;
+    background-color: #efefef;
+    padding: 5px;
+    list-style-type: none;
+}
+
+.answer {
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
+}
+
+.answer:last-child {
+    border-bottom: none;
+}
+
+.best-answer {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+/* 其他信息 */
+.author-info {
+    font-size: 0.8em;
+    color: #555;
+}
+
+.loading,
+.error {
+    font-size: 1.2em;
+    text-align: center;
+    color: #cc0000;
+}
